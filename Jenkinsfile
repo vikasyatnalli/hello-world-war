@@ -14,8 +14,8 @@ pipeline {
        					 }
 				stage('Publish') {
             				steps {
-						sh "docker login -u poojashreesrinivasan -p tanvitanush@1820"
-						sh "docker push  poojashreesrinivasan/hello:1.0"
+						sh "docker login -u vikasyatnalli -p myparentsvikas_1"
+						sh "docker push vikasyatnalli/hello:1.0"
             					}
        					 } 
 				/*stage('Deploy') {
