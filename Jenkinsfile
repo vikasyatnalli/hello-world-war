@@ -12,13 +12,19 @@ pipeline {
                				 sh "mvn clean package"
             					}
        					 }
-				stage('Deploy') {
+				stage('Publish') {
+            				steps {
+						sh "docker login -u poojashreesrinivasan -p tanvitanush@1820"
+						sh "docker push  poojashreesrinivasan/hello:1.0"
+            					}
+       					 } 
+				/*stage('Deploy') {
             				steps {
 						sh "pwd"
 						sh "ls"
 						sh "whoami"
                				 sh "cp /home/slave1/workspace/pipeline3/target/hello-world-war-1.0.0.war /opt/apache-tomcat-9.0.62/webapps/"
             					}
-       					 }
+       					 }*/
    				 }
 		}
