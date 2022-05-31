@@ -8,6 +8,7 @@ FROM ubuntu AS builder
   FROM tomcat:latest    
   CMD [ "service", "tomcat" ]
   COPY --from = builder ./project/target/project.war ./webapps
+  RUN docker run -itd -p 8080:8080
   
 
 /*FROM ubuntu*/
