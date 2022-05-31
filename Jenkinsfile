@@ -9,9 +9,11 @@ pipeline {
        					 }
 				stage('Build') {
             				steps {
-               				 sh "mvn clean package"
+               				 sh "cd hello-world-war"
+					 sh "docker build -t vikasyatnalli/hello:1.0 ."
             					}
        					 }
+		
 				stage('Publish') {
             				steps {
 						sh "docker login -u vikasyatnalli -p myparentsvikas_1"
@@ -23,8 +25,8 @@ pipeline {
 						sh "pwd"
 						sh "ls"
 						sh "whoami"
-               				 sh "cp /home/slave1/workspace/pipeline3/target/hello-world-war-1.0.0.war /opt/apache-tomcat-9.0.62/webapps/"
+						echo "test"
+               				 sh "cp /home/slave3/workspace/pipeline1/target/hello-world-war-1.0.0.war /opt/apache-tomcat-9.0.62/webapps/"
             					}
-       					 }*/
+       					 } */
    				 }
-		}
